@@ -107,6 +107,7 @@
       <option value="1">von 1 bis 5</option>
       <option value="2">von 3 bis 11</option>
       <option value="3">von 4 bis 12</option>
+      <option value="4">von 0 bis 10</option>
     </select>
   </div>
 
@@ -174,6 +175,8 @@
         aktiveMalfolgen = aktiveMalfolgen.filter(f => f >= 3 && f <= 11);
       } else if (schwierigkeit === 3) {
         aktiveMalfolgen = aktiveMalfolgen.filter(f => f >= 4 && f <= 12);
+      } else if (schwierigkeit === 4) {
+        aktiveMalfolgen = aktiveMalfolgen.filter(f => f >= 0 && f <= 10);
       }
 
       // Falls keine Malfolgen ausgewählt wurden, gebe eine Warnung aus
@@ -243,6 +246,10 @@
       if (schwierigkeit === 3) {
         minZahl = 4;
         maxZahl = 12;
+      }
+      if (schwierigkeit === 4) {
+        minZahl = 0;
+        maxZahl = 10;
       }
 
       do {
